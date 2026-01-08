@@ -23,6 +23,3 @@ Este contrato no es un simple “copiar y pegar”, sino una implementación raz
 - Crear una base sólida para auditorías y extensiones futuras
 
 ---
-
-## 📂 Estructura del repositorio
-
