@@ -1,57 +1,28 @@
-# ERC20 Token – Solidity
+# ERC20 From Scratch — Implementación Orientada a Seguridad
 
-Implementación de un token ERC-20 en Solidity, desarrollada con enfoque en:
-- Buenas prácticas
-- Seguridad
-- Claridad de código
-- Documentación profesional
+## 📌 Descripción general
 
-Este repositorio está pensado como base para:
-- Proyectos freelance
-- Auditorías básicas
-- Práctica profesional en blockchain / smart contracts
+Este repositorio contiene una implementación **limpia, mínima y orientada a la seguridad** del estándar ERC-20, desarrollada **desde cero en Solidity**, sin depender de librerías externas como OpenZeppelin.
 
----
+El objetivo del proyecto es **educativo y profesional**:
+- Comprender en profundidad el funcionamiento interno del estándar ERC-20
+- Demostrar buenas prácticas en Solidity (`^0.8.x`)
+- Analizar riesgos, amenazas y superficies de ataque
+- Documentar decisiones de diseño y seguridad
 
-## 📁 Estructura del proyecto
-
-- `contracts/`  
-  Código fuente del smart contract
-
-- `docs/`  
-  Documentación de seguridad, amenazas y ataques comunes
-
-- `tests/`  
-  Pruebas manuales iniciales (en futuras versiones: tests automatizados)
+Este contrato no es un simple “copiar y pegar”, sino una implementación razonada y documentada.
 
 ---
 
-## 🧠 Tecnologías utilizadas
+## 🎯 Objetivos del proyecto
 
-- Solidity `^0.8.20`
-- OpenZeppelin ERC-20
-- Remix IDE
-- Ethereum (testnet compatible)
-
----
-
-## 🚀 Despliegue (básico)
-
-1. Abrir Remix IDE
-2. Cargar `contracts/ERC20.sol`
-3. Compilar con Solidity `0.8.20`
-4. Desplegar en una red de prueba (Sepolia / Goerli)
+- Implementar manualmente el estándar ERC-20
+- Separar claramente la lógica pública e interna
+- Aplicar validaciones estrictas y checks explícitos
+- Documentar riesgos y amenazas comunes en contratos ERC-20
+- Crear una base sólida para auditorías y extensiones futuras
 
 ---
 
-## 🔐 Seguridad
-
-Consultar la documentación en `/docs` antes de usar el contrato en producción.
-
----
-
-## ⚠️ Aviso legal
-
-Este contrato es educativo.  
-No usar en producción sin auditoría profesional.
+## 📂 Estructura del repositorio
 
