@@ -1,107 +1,57 @@
-# 🪙 ERC-20 Token – Implementación Educativa y Segura
+# ERC20 Token – Solidity
 
-Este repositorio contiene una **implementación completa de un contrato ERC-20 en Solidity**, desarrollada con fines **educativos, prácticos y profesionales**, siguiendo buenas prácticas de diseño, legibilidad y seguridad.
+Implementación de un token ERC-20 en Solidity, desarrollada con enfoque en:
+- Buenas prácticas
+- Seguridad
+- Claridad de código
+- Documentación profesional
 
-El objetivo del proyecto es demostrar comprensión real del estándar ERC-20, su lógica interna y los riesgos comunes asociados a contratos mal implementados.
-
----
-
-## 📌 Características principales
-
-- Implementación completa del estándar ERC-20
-- Manejo correcto de balances y allowances
-- Uso explícito de `unchecked` para optimización de gas
-- Separación clara entre funciones públicas e internas
-- Eventos `Transfer` y `Approval` correctamente emitidos
-- Código compatible con Solidity `^0.8.20`
-- Preparado para despliegue en testnets (Sepolia)
+Este repositorio está pensado como base para:
+- Proyectos freelance
+- Auditorías básicas
+- Práctica profesional en blockchain / smart contracts
 
 ---
 
-## 📂 Estructura del contrato
+## 📁 Estructura del proyecto
 
-El contrato implementa:
+- `contracts/`  
+  Código fuente del smart contract
 
-- `totalSupply`
-- `balanceOf`
-- `transfer`
-- `approve`
-- `allowance`
-- `transferFrom`
+- `docs/`  
+  Documentación de seguridad, amenazas y ataques comunes
 
-Funciones internas:
-- `_transfer`
-- `_mint`
-- `_burn`
-- `_approve`
-- `_spendAllowance`
-
-Hooks:
-- `_beforeTokenTransfer`
-- `_afterTokenTransfer`
+- `tests/`  
+  Pruebas manuales iniciales (en futuras versiones: tests automatizados)
 
 ---
 
-## 🛡️ Seguridad aplicada
+## 🧠 Tecnologías utilizadas
 
-- Prevención de transferencias desde y hacia `address(0)`
-- Validación estricta de balances antes de transferir o quemar tokens
-- Control correcto de allowances
-- Uso de `type(uint256).max` para approvals infinitos
-- Aprovechamiento de overflow checks nativos de Solidity 0.8+
-
----
-
-## 🚀 Deploy en Sepolia (resumen)
-
-1. Abrir **Remix IDE**
-2. Crear archivo `ERC20.sol`
-3. Compilar con versión `0.8.20`
-4. Conectar MetaMask
-5. Seleccionar red **Sepolia**
-6. Deploy con `initialSupply`
-7. Confirmar transacción
+- Solidity `^0.8.20`
+- OpenZeppelin ERC-20
+- Remix IDE
+- Ethereum (testnet compatible)
 
 ---
 
-## 🧪 Testing recomendado
+## 🚀 Despliegue (básico)
 
-- Transferencias válidas
-- Transferencias con balance insuficiente
-- `approve` + `transferFrom`
-- `burn` con balance insuficiente
-- Allowance infinita (`uint256.max`)
-
----
-
-## 📖 Objetivo del proyecto
-
-Este proyecto fue creado como parte de un proceso de aprendizaje serio en:
-
-- Blockchain
-- Solidity
-- Seguridad en Smart Contracts
-- Análisis de errores comunes en contratos ERC-20
-
-No es un contrato destinado a producción sin auditoría externa.
+1. Abrir Remix IDE
+2. Cargar `contracts/ERC20.sol`
+3. Compilar con Solidity `0.8.20`
+4. Desplegar en una red de prueba (Sepolia / Goerli)
 
 ---
 
-## 👤 Autor
+## 🔐 Seguridad
 
-**Juan Manuel Jaime**  
-Estudiante de ciberseguridad  
-Interés principal: Blockchain Security, Smart Contracts y análisis ofensivo/defensivo
+Consultar la documentación en `/docs` antes de usar el contrato en producción.
 
 ---
 
-## ⚠️ Disclaimer
+## ⚠️ Aviso legal
 
-Este contrato es **educativo**.  
-No debe utilizarse en producción sin auditoría profesional.
+Este contrato es educativo.  
+No usar en producción sin auditoría profesional.
 
----
-
-## 📜 Licencia
-
-MIT License
