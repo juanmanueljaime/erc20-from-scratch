@@ -70,10 +70,3 @@ Formal audits and automated testing frameworks are recommended before any produc
 If you discover a security issue, treat this repository as **educational material**, not a production system.
 
 No bug bounty program is active.
-
-Para entornos productivos:
-- Agregar `Ownable`
-- Implementar `Pausable`
-- Limitar mint/burn
-- Auditoría externa obligatoria
-
