@@ -1,31 +1,50 @@
-# ERC20 From Scratch — Implementación Orientada a Seguridad
+# ERC20 From Scratch — Implementación Orientada a Seguridad  
+### ERC-20 From Scratch (Solidity)
 
-# ERC-20 From Scratch (Solidity)
-
-Implementación completa del estándar **ERC-20**, escrita **desde cero en Solidity**, con foco en **seguridad**, **buenas prácticas profesionales** y **preparación para entornos laborales reales** (freelance / auditoría junior).
+Implementación completa del estándar ERC-20, escrita desde cero en Solidity, con foco en **seguridad**, **buenas prácticas profesionales** y **preparación para entornos laborales reales** (freelance / auditoría junior).
 
 Este proyecto **NO es un fork de OpenZeppelin**.  
-Es una implementación manual y documentada para demostrar **comprensión real del estándar ERC-20** y sus riesgos.
+Es una implementación manual, documentada y analizada para demostrar comprensión real del estándar ERC-20 y sus riesgos.
 
 ---
 
 ## 📜 Descripción (Español)
 
-Este repositorio contiene un contrato ERC-20 desarrollado íntegramente desde cero, siguiendo el estándar oficial de Ethereum.
+Este repositorio contiene una implementación completa de un contrato ERC-20 desarrollada íntegramente desde cero, siguiendo el estándar oficial de Ethereum.
 
-El objetivo principal es **demostrar conocimiento técnico real**, comprendiendo:
+El objetivo principal es demostrar conocimiento técnico real, comprendiendo:
+
 - cómo funcionan los balances
 - cómo se gestionan las allowances
 - cómo se emiten eventos correctamente
 - qué riesgos existen en contratos ERC-20
 - cómo se documenta un proyecto blockchain de forma profesional
 
-El código y la documentación están pensados para:
-- aprendizaje avanzado
-- revisión técnica
+El proyecto está diseñado como:
+
+- material de aprendizaje avanzado
+- repositorio técnico demostrable
 - portfolio profesional
 - base para auditorías junior
-- trabajo freelance
+- referencia para trabajo freelance
+
+---
+
+## 🧩 Arquitectura del Proyecto
+
+El proyecto separa claramente la **lógica genérica del estándar** de la **implementación concreta del token**:
+
+### Contratos
+
+- `ERC20.sol`  
+  Implementación base del estándar ERC-20 desde cero.  
+  Contiene toda la lógica de balances, allowances, transferencias, mint, burn y hooks.
+
+- `MyToken.sol`  
+  Contrato que hereda de `ERC20.sol` y define un token concreto.  
+  Inicializa nombre, símbolo y supply inicial en el deploy.
+
+Este enfoque replica el patrón utilizado en proyectos profesionales y librerías como OpenZeppelin.
 
 ---
 
@@ -36,6 +55,7 @@ El código y la documentación están pensados para:
 - Emisión correcta de eventos `Transfer` y `Approval`
 - Uso explícito de `unchecked` para optimización de gas
 - Separación clara entre lógica pública e interna
+- Supply inicial controlado y seguro
 - Compatible con Solidity ^0.8.20
 - Listo para deploy en testnet (Sepolia)
 
@@ -43,7 +63,7 @@ El código y la documentación están pensados para:
 
 ## 🛡️ Seguridad
 
-La documentación de seguridad se encuentra separada del código y analiza:
+La documentación de seguridad se encuentra separada del código y analiza en detalle:
 
 - Superficie de ataque
 - Riesgos mitigados
@@ -52,18 +72,7 @@ La documentación de seguridad se encuentra separada del código y analiza:
 - Ataques ERC-20 conocidos
 - Buenas prácticas defensivas
 
-Este enfoque replica la documentación utilizada en **proyectos profesionales**, **auditorías reales** y **entornos empresariales**.
-
----
-
-## 🚀 Deploy (Resumen)
-
-1. Abrir Remix IDE
-2. Compilar con Solidity `0.8.20`
-3. Conectar MetaMask
-4. Seleccionar red **Sepolia**
-5. Deploy del contrato
-6. Confirmar la transacción
+Este enfoque replica la documentación utilizada en proyectos profesionales, auditorías reales y entornos empresariales.
 
 ---
 
@@ -75,14 +84,25 @@ El proyecto incluye documentación de pruebas manuales iniciales, enfocadas en:
 - validaciones lógicas
 - escenarios normales y de error
 
-Preparado para futura migración a frameworks como **Hardhat** o **Foundry**.
+La estructura está preparada para una futura migración a frameworks de testing como **Hardhat** o **Foundry**.
+
+---
+
+## 🚀 Deploy (Resumen)
+
+1. Abrir Remix IDE  
+2. Compilar con Solidity 0.8.20  
+3. Conectar MetaMask  
+4. Seleccionar red Sepolia  
+5. Deploy del contrato `MyToken.sol`  
+6. Confirmar la transacción  
 
 ---
 
 ## ⚠️ Disclaimer
 
-Este contrato es **únicamente educativo**.  
-**NO debe utilizarse en producción** sin una **auditoría profesional**.
+Este contrato es únicamente educativo.  
+**NO debe utilizarse en producción sin una auditoría profesional.**
 
 El autor no se responsabiliza por pérdidas de fondos.
 
@@ -93,7 +113,8 @@ El autor no se responsabiliza por pérdidas de fondos.
 **Juan Manuel Jaime**  
 Estudiante de Ciberseguridad  
 
-**Intereses:**
+Intereses principales:
+
 - Blockchain Security
 - Smart Contracts
 - Análisis ofensivo y defensivo
@@ -101,14 +122,12 @@ Estudiante de Ciberseguridad
 
 ---
 
----
-
 ## 🇬🇧 Description (English)
 
-This repository contains a **from-scratch ERC-20 token implementation written in Solidity**, designed for **educational**, **technical**, and **professional portfolio** purposes.
+This repository contains a **from-scratch ERC-20 token implementation** written in Solidity, designed for educational, technical, and professional portfolio purposes.
 
 This is **NOT a fork of OpenZeppelin**.  
-It is a manual implementation to demonstrate **real understanding of the ERC-20 standard**, its internal mechanics, and security considerations.
+It is a manual implementation created to demonstrate real understanding of the ERC-20 standard, its internal mechanics, and security considerations.
 
 ---
 
@@ -118,7 +137,8 @@ It is a manual implementation to demonstrate **real understanding of the ERC-20 
 - Proper balance and allowance handling
 - Correct `Transfer` and `Approval` event emission
 - Explicit use of `unchecked` for gas optimization
-- Clean separation between public and internal logic
+- Clean separation between base logic and token implementation
+- Controlled initial supply at deployment
 - Solidity ^0.8.20 compatible
 - Ready for testnet deployment (Sepolia)
 
@@ -133,14 +153,7 @@ Security documentation includes:
 - Known ERC-20 vulnerabilities
 - Defensive best practices
 
-This structure mirrors **real-world blockchain security projects**.
-
----
-
-## ⚠️ Disclaimer
-
-This contract is for **educational purposes only**.  
-Do **NOT** use in production without a **professional security audit**.
+This structure mirrors real-world blockchain security projects and audit documentation.
 
 ---
 
@@ -148,4 +161,3 @@ Do **NOT** use in production without a **professional security audit**.
 
 MIT License
 
----
